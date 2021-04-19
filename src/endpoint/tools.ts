@@ -1,5 +1,5 @@
-import { RequestHandler } from 'express';
+import { endpoint } from '../functions/endpoint';
 
-export const toolsGet: RequestHandler = (req, res) => {
+export const toolsGet = endpoint(async (req, res) => {
   res.status(204).end();
-};
+});
