@@ -8,6 +8,7 @@ import { json } from 'body-parser';
 import { readdirSync } from 'fs';
 import { join } from 'path';
 import morgan from 'morgan';
+import openapi from '@ev-fns/openapi';
 import { notFound } from './middlewares/notFound';
 import { exception } from './middlewares/exception';
 
@@ -16,6 +17,7 @@ const app = express();
 app.use(cors());
 app.use(json());
 app.use(morgan('dev'));
+app.use(openapi());
 
 const routes = readdirSync(join(__dirname, 'routes'));
 
